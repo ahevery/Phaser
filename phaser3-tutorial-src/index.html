@@ -14,7 +14,6 @@
         let stars;
         var score = 0;
         var scoreText;
-        let playerColider;
         class Example extends Phaser.Scene {
             preload() {
                 this.load.image('sky', 'assets/sky.png');
@@ -84,7 +83,7 @@
                     repeat: -1
                 });
                 cursors = this.input.keyboard.createCursorKeys();
-                playerColider = this.physics.add.collider(player, platforms);
+                this.physics.add.collider(player, platforms);
                 stars = this.physics.add.group({
                     key: 'star',
                     repeat: 11,
